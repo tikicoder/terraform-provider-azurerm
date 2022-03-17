@@ -19,7 +19,8 @@ func TestExpandFeatures(t *testing.T) {
 			Input: []interface{}{},
 			Expected: features.UserFeatures{
 				ApiManagement: features.ApiManagementFeatures{
-					PurgeSoftDeleteOnDestroy: false,
+					PurgeSoftDeleteOnDestroy:         true,
+					RecoverSoftDeletedApiManagements: true,
 				},
 				CognitiveAccount: features.CognitiveAccountFeatures{
 					PurgeSoftDeleteOnDestroy: true,
@@ -61,7 +62,8 @@ func TestExpandFeatures(t *testing.T) {
 				map[string]interface{}{
 					"api_management": []interface{}{
 						map[string]interface{}{
-							"purge_soft_delete_on_destroy": true,
+							"purge_soft_delete_on_destroy":         true,
+							"recover_soft_deleted_api_managements": true,
 						},
 					},
 					"cognitive_account": []interface{}{
@@ -119,7 +121,8 @@ func TestExpandFeatures(t *testing.T) {
 			},
 			Expected: features.UserFeatures{
 				ApiManagement: features.ApiManagementFeatures{
-					PurgeSoftDeleteOnDestroy: true,
+					PurgeSoftDeleteOnDestroy:         true,
+					RecoverSoftDeletedApiManagements: true,
 				},
 				CognitiveAccount: features.CognitiveAccountFeatures{
 					PurgeSoftDeleteOnDestroy: true,
@@ -161,7 +164,8 @@ func TestExpandFeatures(t *testing.T) {
 				map[string]interface{}{
 					"api_management": []interface{}{
 						map[string]interface{}{
-							"purge_soft_delete_on_destroy": false,
+							"purge_soft_delete_on_destroy":         false,
+							"recover_soft_deleted_api_managements": false,
 						},
 					},
 					"cognitive_account": []interface{}{
@@ -219,7 +223,8 @@ func TestExpandFeatures(t *testing.T) {
 			},
 			Expected: features.UserFeatures{
 				ApiManagement: features.ApiManagementFeatures{
-					PurgeSoftDeleteOnDestroy: false,
+					PurgeSoftDeleteOnDestroy:         false,
+					RecoverSoftDeletedApiManagements: false,
 				},
 				CognitiveAccount: features.CognitiveAccountFeatures{
 					PurgeSoftDeleteOnDestroy: false,
@@ -282,41 +287,46 @@ func TestExpandFeaturesApiManagement(t *testing.T) {
 			},
 			Expected: features.UserFeatures{
 				ApiManagement: features.ApiManagementFeatures{
-					PurgeSoftDeleteOnDestroy: false,
+					PurgeSoftDeleteOnDestroy:         true,
+					RecoverSoftDeletedApiManagements: true,
 				},
 			},
 		},
 		{
-			Name: "Purge Soft Delete On Destroy Api Management Enabled",
+			Name: "Purge Soft Delete On Destroy and Recover Soft Deleted Api Management Enabled",
 			Input: []interface{}{
 				map[string]interface{}{
 					"api_management": []interface{}{
 						map[string]interface{}{
-							"purge_soft_delete_on_destroy": true,
+							"purge_soft_delete_on_destroy":         true,
+							"recover_soft_deleted_api_managements": true,
 						},
 					},
 				},
 			},
 			Expected: features.UserFeatures{
 				ApiManagement: features.ApiManagementFeatures{
-					PurgeSoftDeleteOnDestroy: true,
+					PurgeSoftDeleteOnDestroy:         true,
+					RecoverSoftDeletedApiManagements: true,
 				},
 			},
 		},
 		{
-			Name: "Purge Soft Delete On Destroy Api Management Disabled",
+			Name: "Purge Soft Delete On Destroy and Recover Soft Deleted Api Management Disabled",
 			Input: []interface{}{
 				map[string]interface{}{
 					"api_management": []interface{}{
 						map[string]interface{}{
-							"purge_soft_delete_on_destroy": false,
+							"purge_soft_delete_on_destroy":         false,
+							"recover_soft_deleted_api_managements": false,
 						},
 					},
 				},
 			},
 			Expected: features.UserFeatures{
 				ApiManagement: features.ApiManagementFeatures{
-					PurgeSoftDeleteOnDestroy: false,
+					PurgeSoftDeleteOnDestroy:         false,
+					RecoverSoftDeletedApiManagements: false,
 				},
 			},
 		},

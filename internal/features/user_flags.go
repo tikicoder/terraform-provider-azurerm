@@ -51,5 +51,6 @@ type ResourceGroupFeatures struct {
 }
 
 type ApiManagementFeatures struct {
-	PurgeSoftDeleteOnDestroy bool
+	PurgeSoftDeleteOnDestroy         bool
+	RecoverSoftDeletedApiManagements bool
 }
