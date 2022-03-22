@@ -129,7 +129,7 @@ The `storage_configuration` block supports the following:
 
 * `log_settings` - (Optional) An `storage_settings` as defined below.
 
-* `temp_db_settings` - (Optional) An `storage_settings` as defined below.
+* `temp_db_settings` - (Optional) An `sqltempdb_storage_settings` as defined below.
 
 * `sql_system_db_on_datadisk` - (Optional) SQL Server SystemDb Storage on DataPool if true..
 
