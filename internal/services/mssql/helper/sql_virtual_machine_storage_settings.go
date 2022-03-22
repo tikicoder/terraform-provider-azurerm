@@ -37,19 +37,19 @@ func SQLTempDBStorageSettingSchema() *pluginsdk.Schema {
 		Elem: &pluginsdk.Resource{
 			Schema: map[string]*pluginsdk.Schema{
 				"data_file_path": {
-					Type:         pluginsdk.TypeInt,
-					Optional:     true,
-					Default:			8,
+					Type:     pluginsdk.TypeInt,
+					Optional: true,
+					Default:  8,
 				},
 				"data_file_size": {
-					Type:         pluginsdk.TypeInt,
-					Optional:     true,
-					Default:			256,
+					Type:     pluginsdk.TypeInt,
+					Optional: true,
+					Default:  256,
 				},
 				"data_growth": {
-					Type:         pluginsdk.TypeInt,
-					Optional:     true,
-					Default:			512,
+					Type:     pluginsdk.TypeInt,
+					Optional: true,
+					Default:  512,
 				},
 				"default_file_path": {
 					Type:         pluginsdk.TypeString,
@@ -57,14 +57,14 @@ func SQLTempDBStorageSettingSchema() *pluginsdk.Schema {
 					ValidateFunc: validation.StringIsNotEmpty,
 				},
 				"log_file_size": {
-					Type:         pluginsdk.TypeInt,
-					Optional:     true,
-					Default:			256,
+					Type:     pluginsdk.TypeInt,
+					Optional: true,
+					Default:  256,
 				},
 				"log_growth": {
-					Type:         pluginsdk.TypeInt,
-					Optional:     true,
-					Default:			512,
+					Type:     pluginsdk.TypeInt,
+					Optional: true,
+					Default:  512,
 				},
 				"luns": {
 					Type:     pluginsdk.TypeList,
